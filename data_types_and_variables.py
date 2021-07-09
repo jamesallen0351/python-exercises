@@ -47,7 +47,7 @@ facebook = 350
 
 payment = (google * 6) + (amazon * 4) + (facebook * 10)
 
-payment
+print(f'The total payment is ${payment}')
 
 
 # In[18]:
@@ -89,7 +89,8 @@ password_has_spaces = password != password.strip()
 username_is_good = username_no_more_than_20_characters and password_not_equal_username and not username_has_spaces
 password_is_good = password_at_least_5_characters and password_not_equal_username and not password_has_spaces
 
-credentials_are_good
+print(username)
+print(password)
 
 
 

@@ -22,16 +22,26 @@ for fruit in fruits:
 # Exercise 1 - rewrite the above example code using list comprehension syntax. Make a variable named uppercased_fruits to hold the output of the list comprehension. Output should be ['MANGO', 'KIWI', etc...]
 uppercased_fruits = [f.upper() for f in fruits]
 
+print("Exercise 1 uppercased fruits", uppercased_fruits)
+
 # Exercise 2 - create a variable named capitalized_fruits and use list comprehension syntax to produce output like ['Mango', 'Kiwi', 'Strawberry', etc...]
 capitalized_fruits = [f.capitalize() for f in fruits]
+
+print("Exercise 2 capitalized fruits", capitalized_fruits)
 
 # Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 fruits_with_more_than_two_vowels = [fruit for fruit in fruits if [fruit, len([x for x in fruit if x in 'aeiou'])][1] >= 2]
 
+print("Exercise 3 fruits with more than 2 vowels", fruits_with_more_than_two_vowels)
+
 # Exercise 4 - make a variable named fruits_with_only_two_vowels. The result should be ['mango', 'kiwi', 'strawberry']
 fruits_with_only_two_vowels = [fruit for fruit in fruits if [fruit, len([x for x in fruit if x in 'aeiou'])][1] == 2]
 
+print("Exercise 4 fruits wiht only two vowels", fruits_with_only_two_vowels)
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
+more_than_5_characters = [fruit for fruit in fruits if len(fruit) > 5]
+
+print("Exercise 5 fruit with more than 5 characters", more_than_5_characters)
 
 # Exercise 6 - make a list that contains each fruit with exactly 5 characters
 
