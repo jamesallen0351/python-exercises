@@ -12,7 +12,7 @@ movie_price_per_day = 3
 days = 3 + 5 + 1
 
 total = movie_price_per_day * days
-total
+print(f"The total amount paid is ${total}")
 
 
 # In[8]:
@@ -80,12 +80,17 @@ password = 'notastrongpassword'
 
 
 password_at_least_5_characters = len(password) >= 5
-username_no_more_than_20_characters = len(username) < 20
+username_no_more_than_20_characters = len(username) <= 20
 password_not_equal_username = password != username
-username_or_password_not_start_or_end_whitespace = (password[0] != ' ' and password[-1] != ' ') and (username[0] != ' ' and username[-1] != ' ')
 
+username_has_spaces = username != username.strip()
+password_has_spaces = password != password.strip()
 
-# In[ ]:
+username_is_good = username_no_more_than_20_characters and password_not_equal_username and not username_has_spaces
+password_is_good = password_at_least_5_characters and password_not_equal_username and not password_has_spaces
+
+credentials_are_good
+
 
 
 
