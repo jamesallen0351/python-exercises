@@ -23,10 +23,16 @@ else:
 ## c. create variables and make up values for
 
 ### the number of hours worked in one week
-
+number_of_hours_worked = 40
 ### the hourly rate
-
+hourly_rate = 20
 ### how much the week's paycheck will be
+paycheck = number_of_hours_worked * hourly_rate
+
+print("This week's paycheck will be", paycheck)
+
+# overtime is time and a half pay
+
 
 
 #2 Loop Basics
@@ -58,7 +64,7 @@ while i >= -10:
 # Create a while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000.
 
 i = 2
-while i <= 100000:
+while i < 100000:
     print(i)
     i =+ i**2
 
@@ -74,3 +80,74 @@ while i >= 5:
 
 ## i. Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
 
+
+
+
+# c. break and continue: Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input.
+
+
+# d. The input function can be used to prompt for input and use that input in your python code. Prompt the user to enter a positive number and write a loop that counts from 0 to that number
+
+
+# e. Write a program that prompts the user for a positive integer. Next write a loop that prints out the numbers from the number the user entered down to 1
+
+# 3 Fizzbuzz
+
+## Write a program that prints the numbers from 1 to 100
+i = 0
+while i <= 100:
+    print(i)
+    i += 1
+## For multiples of three print "Fizz" instead of the number
+## For the multiples of five print "Buzz".
+## For numbers which are multiples of both three and five print "FizzBuzz"
+for r in range(1, 101):
+    if r % 15 == 0:  # multiples of 15 contain 3 and 5 and need both fizz and buzz, first on loop check
+        print("FizzBuzz")
+    elif r % 3 == 0:
+        print("Fizz")
+    elif r % 5 == 0:
+        print("Buzz")
+    else:
+        print(r)
+### alternate fizzbuzz solution    
+for fizzbuzz in range(1, 100):
+    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+        print("fizzbuzz")
+        continue
+    elif fizzbuzz % 3 == 0:
+        print("fizz")
+        continue
+    elif fizzbuzz % 5 == 0:
+        print("buzz")
+        continue
+    print(fizzbuzz)
+
+
+
+
+# 4 Display a table of powers.
+## Prompt the user to enter an integer.
+## Display a table of squares and cubes from 1 to the value entered.
+## Ask if the user wants to continue.
+## Assume that the user will enter valid data.
+## Only continue if the user agrees to.
+
+
+
+
+# 5 Convert given number grades into letter grades.
+
+## Prompt the user for a numerical grade from 0 to 100.
+## Display the corresponding letter grade.
+## Prompt the user to continue.
+## Assume that the user will enter valid integers for the grades.
+## The application should only continue if the user agrees to.
+## Grade Ranges:A : 100 - 88, B : 87 - 80, C : 79 - 67, D : 66 - 60, F : 59 - 0
+
+### bonus Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+)
+
+
+# 6 Create a list of dictionaries where each dictionary represents a book that you have read. Each dictionary in the list should have the keys title, author, and genre.
+## Loop through the list and print out information about each book.
+## Prompt the user to enter a genre, then loop through your books list and print out the titles of all the books in that genre.
