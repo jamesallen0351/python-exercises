@@ -81,6 +81,12 @@ percentage = input("What percent do you want to tip, ex. 10, 15, 20?")
 
 print(calculate tip(percentage, sub_total)) # still a work in progress, not able to get an end total
 
+bill = 100
+tip_percent = 20
+
+def calculate_tip(bill, tip_percent):
+    return bill * (tip_percent / 100)
+
 
 # 6 Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
 

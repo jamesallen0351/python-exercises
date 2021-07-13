@@ -11,6 +11,13 @@ for day in days_of_the_week:
     print(f'Sounds like somebody has a case of the {day}s')
 else:
         print("Today seems like a good day")
+# example code
+day = input("What day of the week is it?   ")
+
+if day.lower() == "monday":
+    print("Today is monday")
+else:
+    print("Today is not monday")
 
 ## b. prompt the user for a day of the week, print out whether the day is a weekday or a weekend
 what_day_is_it = input(f"Might I inquire as to what day of the week it is?")
@@ -21,11 +28,19 @@ else:
     print("Weekend Vibes")  #did not work as intended
 
 # adding review notes
+print("What day of the week is it?")
+day = input()
 
-    # Task 1 Control Basics
-    ### A) prompt the user for a day of the week, print out whether the day is Monday or not"
-  day = input(\"What day of the week is it?   \")
-  
+if day.lower() in ("monday", "tuseday", "wednesday", "thursday", "friday"):  
+    print()
+    print("Today is a weekday!")  
+elif day.lower() in ("saturday", "sunday"):    
+    print()
+    print("Today is a weekend!") 
+else:  
+    print()
+    print(f"{day} is not a day of the week!")
+
   
 
 
@@ -43,6 +58,23 @@ print("This week's paycheck will be", paycheck)
 
 # overtime is time and a half pay
 overtime
+
+# example notes
+hours_this_week = 50
+hourly_rate = 20
+
+# if no overtime, pay = hours_this_week * hourly_rate
+
+# if overtime, pay = (40 * hourly_rate) + overtime
+
+# overtime = (hours_this_week - 40) * (hourly_rate * 1.5)
+
+if hours_this_week <= 40: 
+    pay = hours_this_week * hourly_rate 
+if hours_this_week > 40:
+    overtime = (hours_this_week - 40) * (hourly_rate * 1.5)
+    pay = (40 * hourly_rate) + overtime
+print(f"Total Wages: {pay}")
 
 
 #2 Loop Basics
@@ -89,8 +121,20 @@ while i >= 5:
 # b. For Loops
 
 ## i. Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
+# prompt user for a number
+print("Give me a number!")
+input_number = input()
+# loop through the list of table numbers
+# for each generate a table equation and print results
 
+for tab_num in range(1,11): 
+    print(f"{input_number} X {tab_num} = {input_number * tab_num}") # input numbers are interpreted as strings
+    # loop through the list of table numbers
+# for each generate a table equation and print results
 
+for tab_num in range(1,11):
+    
+    print(f"{input_number} X {tab_num} = {int(input_number) * tab_num}") # Fix data types by wrapping in desired type
 
 
 # c. break and continue: Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input.
@@ -100,6 +144,59 @@ while i >= 5:
 
 
 # e. Write a program that prompts the user for a positive integer. Next write a loop that prints out the numbers from the number the user entered down to 1
+
+
+# for loops all together example
+
+while True:
+    
+    # prompt user for a number
+    print("Enter a whole odd number between 1 and 50")
+    pick = input()
+    
+    # check is a number
+    if pick.isnumeric() == False:        
+        
+        print()
+        print("Please enter a WHOLE NUMBER!")
+        print()
+        
+        continue
+        
+    else:
+        
+        pick = int(pick) # make ready to evaluate as a number
+    
+    
+    # check is an appropriate number
+    if (pick > 0) and (pick <51) and (pick %2 != 0):
+        
+        print()
+        print(f"Thank you! Your number is: {pick}")
+        print()
+        
+        break
+        
+    else:
+        
+        print()
+        print("This number is invalid!")
+        print()
+        
+# print odd number message and yikes message for numbers 1 to 50    
+for number in range(1,50):
+    
+    if number %2 == 0:
+        
+        continue
+        
+    if number == pick:
+        
+        print("Yikes! Skipping number:", number)
+        
+        continue
+        
+    print("Here is an odd number:", number)
 
 # 3 Fizzbuzz
 
@@ -144,7 +241,71 @@ for fizzbuzz in range(1, 100):
 ## Ask if the user wants to continue.
 ## Assume that the user will enter valid data.
 ## Only continue if the user agrees to.
+# all together now
 
+first = True
+
+while True:
+    
+    # if this is the first time through the loop go right to table prompt
+    if first == True:
+        
+        first = False
+        
+        persist = 'y'
+        
+    # if this is not the first time through the loop prompt user to continue
+    else:
+      
+        print("Do you wish to continue? (y/n)")
+        persist = input()
+        print()
+
+        
+    # Display table prompt / Quit / Re-prompt
+    if persist.lower() == 'y':
+
+        # prompt user for positive whole number
+        while True:
+    
+            # prompt user for a number
+            print("Enter a positive whole number!")
+            pick = input()
+
+            # check is a number
+            if pick.isnumeric() == False:        
+
+                print()
+                print("Please enter a POSITIVE WHOLE NUMBER!")
+                print()
+                
+            else:
+        
+                pick = int(pick) 
+            
+                break
+                
+                
+        # print titles
+        print() # adding space
+        print(" Number |Squared |Cubed  ")
+        print("|-------|--------|-----|")
+
+        # print body of chart
+        for r in range(1,pick+1):
+
+            print("|{:<7}|{:<8}|{:<5}|".format(r,r**2,r**3))
+
+        
+        print() # adding space
+        
+    elif persist.lower() == 'n':
+
+        break
+
+    else:
+
+        continue
 
 
 
