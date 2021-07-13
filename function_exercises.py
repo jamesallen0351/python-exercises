@@ -7,6 +7,8 @@ def is_two(a): # this is defining the function and adding a variable
     else:
         False
 
+def is_two(b):
+    return (b == 2) or (b == '2') # returns a 2 or string of 2
 
 print(is_two(2)) # returns a True
 print(is_two(3)) # returns a None ?
@@ -26,21 +28,42 @@ print(is_vowel("x"))
 
 def is_vowel(vowel):
     return vowel.lower() in 'aeiou' # using the in function to include all vowels
+
 print(is_vowel("a")) # this one works, returns a True statememt
 print(is_vowel("b")) # returns a False statement
 
 
-# 3 Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. Use your is_vowel function to accomplish this.
+# 3 Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. #
+# Use your is_vowel function to accomplish this.
 def is_consonant(consonant): #defining the function
     return consonant.lower() in 'bcdfghjklmnpqrstvwxyz' # using the in function to identify consonants
 
 print(is_consonant('x')) # True
 print(is_consonant('a')) # False
 
+# example
+ def is_consonant(string):
+     return string.lower() not in 'aeiou'
+
+string = "I"
+
+is_consonant(string)
+
+# use is_vowel function
+string = "t"
+is_vowel(string) == False
+
+def is_consonsnt(string):
+    return is_vowel(string) == False
+
 
 # 4 Define a function that accepts a string that is a word. The function should capitalize the first letter of the word if the word starts with a consonant.
-def string_is_a_word(word):
-    if type(word) == str:
+def capitalize_string_is_a_word(word):
+    if word[0] not in 'aeiou'
+        word = word.capitalize()
+    return word
+
+print(capitalize_string_is_a_word(tacos)
 
 
 # 5 Define a function named calculate_tip. It should accept a tip percentage (a number between 0 and 1) and the bill total, and return the amount to tip. 
@@ -60,11 +83,21 @@ print(calculate tip(percentage, sub_total)) # still a work in progress, not able
 
 
 # 6 Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
-def apply_discount()
+
+
+def apply_discount(original_price, discount_percent):
+    
 
 # 7 Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
 def handle_commas(comma):
+    number = ""
+    for char in comma:
+        if char not in ",":
+            number += char
+    return float(number)
 
+print(handle_commas(12,34))
+print(handle_commas(1,,,,000)) # not sure if this works, need to update
 
 # 8 Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
 def get_letter_grade(grade):
@@ -102,6 +135,20 @@ print(remove_vowels("tacos"))
 print(remove_vowels("enchiladas"))
 print(remove_vowels("nachos"))
 
+# example
+
+def remove_vowels(string):
+    no_vowels = ""
+    for char in string:
+        if char.lower() not in "aeiou":
+            no_vowels += char
+    return no_vowels
+
+print(remove_vowels("tacos"))
+print(remove_vowels("enchiladas"))
+print(remove_vowels("nachos"))
+
+
 # 10 Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
 ## anything that is not a valid python identifier should be removed, leading and trailing whitespace should be removed, 
 # everything should be lowercase,
@@ -129,6 +176,12 @@ print(normalize_name("Name"))
 print(normalize_name("FirstName")) # did not return expected result
 # still working on solution for this problem
 
+# example
+# use this as a test name
+# "1 2 3 $()&^$( T#%^H#%^i%^s%^ i%^&S %&(*(a v$%&AlI#%^d p#%^YTh#%^on id#%^%&en$%&TI#$^%%$&^*Fi@$%^*(er  #^#^#@"
+# this_is_a_valid_python_identifier
+
+
 
 # 11 Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 def cumulative_sum(number):
@@ -138,12 +191,12 @@ print(cumulative_sum([1,2,3,4,5]))  # 15 summed up the list but not returning a 
 print(cumulative_sum([6,7,8,9,10]))  # this just gave a sum of all the numbers in the list (40)
 
 
-list=[1,2,3,4] # established a list of numbers
-new_list=[] # created a new list
-j=0 # setting a startpoint
+list = [1,2,3,4] # established a list of numbers
+new_list = [] # created a new list
+total = 0 # setting a startpoint
 for i in range(0,len(list)):
-    j+=list[i]
-    new_list.append(j)
+    total += list[i]
+    new_list.append(total)
      
 print(new_list) # works but with a list input
 # [1, 3, 6, 10]
@@ -158,6 +211,7 @@ print(new_list) # works but with a list input
 
 # bonus exercise
 
-# 1 Create a function named twelveto24. It should accept a string in the format 10:45am or 4:30pm and return a string that is the representation of the time in a 24-hour format. Bonus write a function that does the opposite.
+# 1 Create a function named twelveto24. It should accept a string in the format 10:45am or 4:30pm and return a string that is the representation of the time in a 24-hour format. 
+# Bonus write a function that does the opposite.
 
 # 2 Create a function named col_index. It should accept a spreadsheet column name, and return the index number of the column.
